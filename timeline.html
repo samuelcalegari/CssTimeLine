@@ -14,13 +14,10 @@ body {
 
 /* The actual timeline (the vertical ruler) */
 .timeline { 
+  counter-reset: compteListe;
   max-width: 1200px;
   margin: 0 auto;
   height:100%;
-  background-image: linear-gradient(#000, #000);
-  background-size: 2px 100%;
-  background-repeat: no-repeat;
-  background-position: center center;
 }
 
 /* The actual timeline (the vertical ruler) */
@@ -33,29 +30,38 @@ body {
   bottom: 0;
   left: 50%;
   margin-left: -3px;
+  height:100%;
 }
 
 /* Containers */
-.lcontainer, .rcontainer {
+.lcontainer, .rcontainer { 
   padding: 10px 40px;
   position: relative;
   background-color: inherit; 
   width: 50%;
+  height:100%;
   display : block;
 }
 
 /* The circles on the timeline */
 .lcontainer::after {
-  content: '';
+  counter-increment: compteListe 1;
+  content: counter(compteListe) " ";
   position: absolute;
-  width: 25px;
-  height: 25px;
-  right: -17px;
-  background-color: #FF9F55;
-  border: 4px solid #FF9F55;
-  top: 15px;
+  width:  35px;
+  height: 35px;
+  right: -21px;
+  background-color: #6e3b95;
+  border: 4px solid #6e3b95;
+  top: 30px;
   border-radius: 50%;
   z-index: 1;
+  color:white;
+  text-align:center;
+  vertical-align: middle;
+  font-weight: bold;
+  line-height: 30px;
+  
 }
 
 /* Place the container to the left */
@@ -71,7 +77,6 @@ body {
 /* The actual content */
 .content {
   padding: 5px 15px;
-  background-color: white;
   position: relative;
 }
 
@@ -84,38 +89,127 @@ body {
 }
 
 .line {
+ height: 90px;
  clear:both;
+}
+
+.content > h2, .content > p { 
+	color : white;
 }
 
 
 </style>
 </head>
 <body>
-	<div class="timeline">	
-		<div class="line">
-			<div class="lcontainer">
-				<div class="content">
-					<h2>2019</h2>      
-				</div>
+<div class="timeline">	
+	<div class="line">
+  		<div class="lcontainer">
+			<div class="content">
+				<h2>16h00</h2>      
 			</div>
-			<div class="rcontainer">
-				<div class="content">
-					<p> i was here too ! </p>
-				</div>
+  		</div>
+  		<div class="rcontainer">
+    		<div class="content">
+      			<p> Lancement du concours accueil des participants </p>
+            </div>
+    	</div>
+  	</div>
+    <div class="line">
+  		<div class="lcontainer">
+			<div class="content">
+				<h2>16h00 - 18h30</h2>      
 			</div>
-		</div>	
-		<div class="line">
-			<div class="lcontainer">
-				<div class="content">
-					<h2>2018</h2>      
-				</div>
+  		</div>
+  		<div class="rcontainer">
+    		<div class="content">
+      			<p> Atelier d'entrainement aux pichs </p>
+            </div>
+    	</div>
+  	</div>
+    <div class="line">
+  		<div class="lcontainer">
+			<div class="content">
+				<h2>18h00</h2>      
 			</div>
-			<div class="rcontainer">
-				<div class="content">
-					<p> i was here ! </p>
-				</div>
+  		</div>
+  		<div class="rcontainer">
+    		<div class="content">
+      			<p> Accueil presse, jury, coachs </p>
+            </div>
+    	</div>
+  	</div>
+    <div class="line">
+  		<div class="lcontainer">
+			<div class="content">
+				<h2>18h30</h2>      
 			</div>
-		</div>
-	</div>
+  		</div>
+  		<div class="rcontainer">
+    		<div class="content">
+      			<p> Discours d'ouverture connecté </p>
+            </div>
+    	</div>
+  	</div>
+    <div class="line">
+  		<div class="lcontainer">
+			<div class="content">
+				<h2>16h00 - 18h30</h2>      
+			</div>
+  		</div>
+  		<div class="rcontainer">
+    		<div class="content">
+      			<p> Atelier d'entrainement aux pitchs </p>
+            </div>
+    	</div>
+  	</div>
+    <div class="line">
+  		<div class="lcontainer">
+			<div class="content">
+				<h2>19h30</h2>      
+			</div>
+  		</div>
+  		<div class="rcontainer">
+    		<div class="content">
+      			<p> Pichs (1 min) </p>
+            </div>
+    	</div>
+  	</div>
+    <div class="line">
+  		<div class="lcontainer">
+			<div class="content">
+				<h2>20h00</h2>      
+			</div>
+  		</div>
+  		<div class="rcontainer">
+    		<div class="content">
+      			<p> Vote et sélection des projets </p>
+            </div>
+    	</div>
+  	</div>
+    <div class="line">
+  		<div class="lcontainer">
+			<div class="content">
+				<h2>20h30</h2>      
+			</div>
+  		</div>
+  		<div class="rcontainer">
+    		<div class="content">
+      			<p> Constitution des équipes autour d'un buffet </p>
+            </div>
+    	</div>
+  	</div>
+    <div class="line">
+  		<div class="lcontainer">
+			<div class="content">
+				<h2>Nuit</h2>      
+			</div>
+  		</div>
+  		<div class="rcontainer">
+    		<div class="content">
+      			<p> Début du travail </p>
+            </div>
+    	</div>
+  	</div>
+</div>
 </body>
 </html>
